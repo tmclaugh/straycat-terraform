@@ -130,6 +130,19 @@ output "vpc.subnet_ids_public" {
   }
 }
 
+output "vpc.subnet_ids" {
+  value = {
+    private = {
+      private = "${module.vpc_private.subnet_ids_private}"
+      public  = "${module.vpc_private.subnet_ids_public}"
+    }
+    public = {
+      private = "${module.vpc_public.subnet_ids_private}"
+      public  = "${module.vpc_public.subnet_ids_public}"
+    }
+  }
+}
+
 output "vpc.subnet_id_by_availability_zone_public" {
   value = {
     private = "${module.vpc_private.subnet_id_by_availability_zone_public}"
