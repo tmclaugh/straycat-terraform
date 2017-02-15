@@ -2,10 +2,6 @@ output "domain" {
   value = "${var.domain}"
 }
 
-output "environment" {
-  value = "${var.environment}"
-}
-
 output "aws_region" {
   value = "${var.aws_region}"
 }

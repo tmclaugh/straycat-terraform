@@ -1,7 +1,7 @@
 // intial AWS setup.
 module "aws_s3_bucket_terraform_state_logs" {
   source              = "./modules/aws_logs"
-  s3_logs_bucket_name = "${var.domain}-${var.environment}-logs"
+  s3_logs_bucket_name = "${var.domain}-${var.aws_account}-terraform-logs"
 }
 
 module "aws_s3_bucket_terraform_state" {
