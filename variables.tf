@@ -9,13 +9,13 @@ variable "aws_account" {}
 
 variable "aws_account_id" {}
 
-variable "environment" {}
-
 variable "domain" {}
 
 variable "aws_region" {
   default = "us-east-1"
 }
+
+variable "terraform_state_bucket" {}
 
 # FIXME: replace hard coding with an aws provider var if I can figure out how
 # to limit the list size.
