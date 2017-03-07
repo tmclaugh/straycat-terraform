@@ -14,8 +14,10 @@ terragrunt = {
   }
 }
 
-# WARNING: Must be aligned with terragrunt setup
-terraform_state_bucket = "straycat.dhs.org-straycat-terraform"
+# WARNING: Must be aligned with terragrunt setup.
+# NOTE: tf_straycat_svc takes care of the {var.domain}-{var.aws_account} in
+# the bucket name.
+terraform_state_bucket = "terraform"
 
 aws_profile = "straycat"      # AWS credentials profile name
 aws_account = "straycat"      # AWS account name
