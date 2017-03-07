@@ -2,6 +2,10 @@ output "domain" {
   value = "${var.domain}"
 }
 
+output "aws_account" {
+  value = "${var.aws_account}"
+}
+
 output "aws_region" {
   value = "${var.aws_region}"
 }
