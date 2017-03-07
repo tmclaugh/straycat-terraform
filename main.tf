@@ -15,3 +15,10 @@ module "aws_s3_bucket_terraform_state" {
   aws_region     = "${var.aws_region}"
 }
 
+// We'll use this bucket to store logs from our infrastructure, ex. S3 access
+// logs.
+module "aws_s3_bucket_infra_logs" {
+  source              = "./modules/aws_logs"
+  s3_logs_bucket_name = "${var.domain}-${var.aws_account}-infra-logs"
+}
+
