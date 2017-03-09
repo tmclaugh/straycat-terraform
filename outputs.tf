@@ -10,6 +10,10 @@ output "aws_region" {
   value = "${var.aws_region}"
 }
 
+output "aws_s3_prefix" {
+  value = "${var.aws_s3_prefix}"
+}
+
 output "aws_availability_zones" {
   value = ["${var.aws_availability_zones}"]
 }

@@ -9,6 +9,8 @@ variable "aws_account" {}
 
 variable "aws_account_id" {}
 
+variable "aws_s3_prefix" {}
+
 variable "domain" {}
 
 variable "aws_region" {

@@ -3,11 +3,12 @@
 // Terraform state bucket
 module "aws_s3_bucket_terraform_state_logs" {
   source              = "./modules/aws_logs"
-  s3_logs_bucket_name = "${var.domain}-${var.aws_account}-terraform-logs"
+  s3_logs_bucket_name = "${var.aws_s3_prefix}-${var.aws_account}-terraform-logs"
 }
 
 module "aws_s3_bucket_terraform_state" {
   source         = "github.com/tmclaugh/tf_straycat_aws_s3"
+  #source = "../tf_straycat_aws_s3"
   s3_bucket_name = "${var.terraform_state_bucket}"
   s3_logs_bucket = "${module.aws_s3_bucket_terraform_state_logs.bucket_id}"
   versioning     = "true"
@@ -19,6 +20,6 @@ module "aws_s3_bucket_terraform_state" {
 // logs.
 module "aws_s3_bucket_infra_logs" {
   source              = "./modules/aws_logs"
-  s3_logs_bucket_name = "${var.domain}-${var.aws_account}-infra-logs"
+  s3_logs_bucket_name = "${var.aws_s3_prefix}-${var.aws_account}-infra-logs"
 }
 
