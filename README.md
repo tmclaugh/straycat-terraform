@@ -22,11 +22,22 @@ Module repositories are for Terraform modules that will be reused.  They cannot 
 Terraform service define what infrastructure looks like.
 
 Service repositories are for managing pieces of our infrastructure.  They are typically foundational blocks that don't correspond to a particular application.  For example:
-* AWS VPC
-* AWS IAM
-  * A service may add additional roles
+* [AWS VPC](https://github.com/tmclaugh/straycat-terraform-aws-vpc)
+* [AWS IAM](https://github.com/tmclaugh/straycat-terraform-aws-iam)
+  * Additional users, groups, roles, and policies directly associated with services can be added using these modules:
+    * [tf_straycat_aws_iam](https://github.com/tmclaugh/tf_straycat_aws_iam_user)
+    * tf_straycat_aws_iam_role
+    * tf_straycat_aws_iam_role
+    * tf_straycat_aws_iam_policy
 * AWS Route53
-  * records may be added by an application
+  * This should handle zone and basic record setup.
+  * Service related recorss records should be handled by:
+    * tf_straycat_aws_route53_record
+* Bastion host
+  * This is the only SSH ingress point into the enviornment
+
+For services with code assets, add the terraform code for the service under _deploy/_.  For services without code assets, create a repo called straycat-[service_name].  Additional services should use the Terraform module below.
+* [tf_straycat_svc](https://github.com/tmclaugh/tf_straycat_svc)
 
 ___Note: We are currently mixing modules into our service repos.  We should probably stop that and move our modules into their own repos for consistency.___
 
