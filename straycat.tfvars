@@ -24,5 +24,4 @@ aws_account       = "straycat"          # AWS account name
 aws_account_id    = ""                  # AWS account ID
 domain            = "straycat.dhs.org"  # domain name
 aws_s3_prefix     = "straycat-dhs-org"  # we prefix S3 buckets with this
-environment       = "master"            # Name of our environment
 
