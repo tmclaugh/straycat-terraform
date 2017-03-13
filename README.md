@@ -31,7 +31,7 @@ Service repositories are for managing pieces of our infrastructure.  They are ty
     * tf_straycat_aws_iam_policy
 * [AWS CloudTrail](https://github.com/tmclaugh/straycat-terraform-aws-cloudtrail)
   * Additional cloustrails can be created with:
-    * [tf_straycat_aws_iam_cloudtrail](https://github.com/tmclaugh/tf_straycat_aws_iam_cloudtrail)
+    * [tf_straycat_aws_iam_cloudtrail](https://github.com/tmclaugh/tf_straycat_aws_cloudtrail)
 * AWS Route53
   * This should handle zone and basic record setup.
   * Service related recorss records should be handled by:
