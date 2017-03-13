@@ -27,11 +27,11 @@ output "aws_s3_terraform_state_logs_bucket_bucket_arn" {
 }
 
 output "aws_s3_bucket_terraform_state_bucket_id" {
-  value = "${module.aws_s3_bucket_terraform_state.bucket_id}"
+  value = "${aws_s3_bucket.aws_s3_bucket_terraform_state.bucket_id}"
 }
 
 output "aws_s3_bucket_terraform_state_bucket_arn" {
-  value = "${module.aws_s3_bucket_terraform_state.bucket_arn}"
+  value = "${aws_s3_bucket.aws_s3_bucket_terraform_state.bucket_arn}"
 }
 
 output "aws_s3_bucket_infra_logs_bucket_id" {
